@@ -1,0 +1,364 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ctrl Alt Crew Design System - Modern Tech Aesthetic */
+
+@layer base {
+  :root {
+    /* Dark Modern Theme with Futuristic Blue */
+    --background: 220 20% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Futuristic Blue Primary */
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 211 100% 60%;
+
+    /* Dark Secondary */
+    --secondary: 220 16% 22%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 16% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Blue Accent */
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 22%;
+    --input: 220 18% 16%;
+    --ring: 211 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Futuristic Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(211 100% 50%), hsl(211 100% 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(220 20% 8%), hsl(220 18% 12%));
+    --gradient-glow: linear-gradient(135deg, hsl(211 100% 50% / 0.2), hsl(211 100% 60% / 0.3));
+
+    /* Blue Glow Effects */
+    --key-shadow: 0 4px 20px hsl(211 100% 50% / 0.2);
+    --key-glow: 0 0 30px hsl(211 100% 50% / 0.4);
+    --key-hover: 0 6px 40px hsl(211 100% 50% / 0.6);
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 25% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 211 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 16% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 16% 16%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 211 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 16% 20%;
+    --input: 220 18% 14%;
+    --ring: 211 100% 55%;
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 211 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 16% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 16% 20%;
+    --sidebar-ring: 211 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Keyboard Key Styles with Blue Glow */
+  .keyboard-key {
+    @apply bg-card border border-border rounded-lg px-4 py-2 shadow-lg;
+    box-shadow: var(--key-shadow);
+    transition: var(--transition-smooth);
+    border-color: hsl(211 100% 50% / 0.3);
+  }
+
+  .keyboard-key:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--key-hover);
+    border-color: hsl(211 100% 50% / 0.6);
+  }
+
+  .keyboard-key-large {
+    @apply keyboard-key px-8 py-4 text-lg font-bold;
+  }
+
+  /* Glass-morphism Card */
+  .glass-card {
+    @apply bg-card/40 backdrop-blur-xl border border-border/50 rounded-lg shadow-2xl;
+    box-shadow: 0 8px 32px 0 hsl(211 100% 50% / 0.15);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 8px 32px 0 hsl(211 100% 50% / 0.3);
+    border-color: hsl(211 100% 50% / 0.4);
+    transform: translateY(-4px);
+  }
+
+  /* Gradient backgrounds */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .gradient-glow {
+    background: var(--gradient-glow);
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--key-glow);
+  }
+
+  .glow-hover:hover {
+    box-shadow: var(--key-hover);
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* Blue Glow Border */
+  .glow-border {
+    border: 1px solid hsl(211 100% 50% / 0.3);
+    transition: var(--transition-smooth);
+  }
+
+  .glow-border:hover {
+    border-color: hsl(211 100% 50% / 0.8);
+    box-shadow: 0 0 20px hsl(211 100% 50% / 0.4);
+  }
+
+  /* Animated elements */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  /* Scroll animations */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+  }
+
+  .scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient {
+    border-image: var(--gradient-primary) 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  from { box-shadow: 0 0 30px hsl(211 100% 50% / 0.3); }
+  to { box-shadow: 0 0 50px hsl(211 100% 50% / 0.6); }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced 3D Effects */
+@keyframes rotate-3d {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes float-3d {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -30px, 0); }
+}
+
+@keyframes pulse-3d {
+  0%, 100% { transform: scale3d(1, 1, 1); }
+  50% { transform: scale3d(1.05, 1.05, 1.05); }
+}
+
+/* Perspective container */
+.perspective-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-3d:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale3d(1.05, 1.05, 1.05);
+}
+
+/* Depth layers */
+.layer-1 { transform: translateZ(10px); }
+.layer-2 { transform: translateZ(20px); }
+.layer-3 { transform: translateZ(30px); }
+
+/* Parallax effect */
+.parallax {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+/* 3D text shadow */
+.text-3d {
+  text-shadow: 
+    0 1px 0 hsl(211 100% 45%),
+    0 2px 0 hsl(211 100% 40%),
+    0 3px 0 hsl(211 100% 35%),
+    0 4px 0 hsl(211 100% 30%),
+    0 5px 0 hsl(211 100% 25%),
+    0 6px 1px rgba(0, 0, 0, 0.1),
+    0 8px 5px rgba(0, 0, 0, 0.2),
+    0 12px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Neon glow effect for 3D elements */
+.neon-glow {
+  box-shadow: 
+    0 0 5px hsl(211 100% 50%),
+    0 0 10px hsl(211 100% 50%),
+    0 0 20px hsl(211 100% 50%),
+    0 0 40px hsl(211 100% 50%),
+    0 0 80px hsl(211 100% 50%);
+  animation: neon-pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+  from {
+    box-shadow: 
+      0 0 5px hsl(211 100% 50%),
+      0 0 10px hsl(211 100% 50%),
+      0 0 20px hsl(211 100% 50%),
+      0 0 40px hsl(211 100% 50%);
+  }
+  to {
+    box-shadow: 
+      0 0 10px hsl(211 100% 50%),
+      0 0 20px hsl(211 100% 50%),
+      0 0 40px hsl(211 100% 50%),
+      0 0 80px hsl(211 100% 50%),
+      0 0 120px hsl(211 100% 50%);
+  }
+}
+
+/* Glass morphism with depth */
+.glass-3d {
+  background: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  transform-style: preserve-3d;
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Holographic effect */
+.holographic {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    hsl(211 100% 50% / 0.2),
+    hsl(280 100% 50% / 0.2),
+    hsl(340 100% 50% / 0.2),
+    hsl(211 100% 50% / 0.2)
+  );
+  background-size: 400% 400%;
+  animation: holographic-shift 8s ease infinite;
+}
+
+@keyframes holographic-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
