@@ -13,7 +13,7 @@ import PremiumHeroScene from '@/components/3D/PremiumHeroScene';
 import { Suspense } from 'react';
 
 const Home = () => {
-  const projectCount = useCountUp(150, 2000, 200);
+  const projectCount = useCountUp(100, 2000, 200);
   const clientCount = useCountUp(80, 2000, 400);
   const countryCount = useCountUp(15, 2000, 600);
   const yearCount = useCountUp(1, 2000, 800);
